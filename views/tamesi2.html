@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>onclickサンプル</title>
+        <script >
+        function getId(a){
+            console.log(a);
+        }
+        </script>
+    </head>
+    <body>
+        <p>ボタンを押してください</p>
+        <input id="id01" type="button" value="show ID" onclick="getId(this.id)">
+    </body>
+</html>
+
+
+<input type="button" value="<%= educationA.name %>" onclick="getId(a)">
+
+<button type="button" id="eduA-<%=educationA.id%>" class="name-column" onclick="getId(this)"><%= educationA.name %> </button>
+
+<button type="button" id="eduA-<%=educationA.id%>" class="name-column" onclick="getId(a)"><%= educationA.name %> </button>

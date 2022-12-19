@@ -1,0 +1,29 @@
+
+.subjectTitle{
+    font-size:25px;
+	padding:5px;
+}
+input{
+	margin-right:5px;
+}
+table , td, th {
+	border: 1px solid #595959;
+	border-collapse: collapse;
+    height:400px;
+    font-size: 10px;
+}
+td, th {
+	padding: 1px;
+	width: 30px;
+	height: 10px;
+}
+th {
+	background: #f0e6cc;
+}
+
+.Sub-class{
+    width:160px;
+}
+.shortage{
+	color:red;
+}

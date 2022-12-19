@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>単位計算ツール</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>単位計算ツール</h1>
+        </header>
+        <main>
+            <div class="container">
+                <div class="wrapper1">
+                    <div class="subject1">
+                        <div class="subjectTitle">教養教育科目A系列</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "教養A"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_eduA(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject2"> 
+                        <div class="subjectTitle">教養教育科目B系列</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "教養B"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_eduB(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>  
+                    <div class="subject3">
+                        <div class="subjectTitle">教養教育科目C系列</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "教養C"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_eduC(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject4">
+                        <div class="subjectTitle">教養教育科目D系列</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "教養D"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_eduD(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject5">
+                        <div class="subjectTitle">教養教育科目E系列</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "教養E"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_eduE(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject6">
+                        <div class="subjectTitle">第一外国語(英語)</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "第一外国語(英語)"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_flang1(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject7">
+                        <div class="subjectTitle">第二外国語</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "第二外国語"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_flang2(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject8">
+                        <div class="subjectTitle">選択外国語</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "選択外国語"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_any_flang(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject9">
+                        <div class="subjectTitle">基礎科目(必修)</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "基礎科目(必修)"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_basic_sub1(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject10">
+                        <div class="subjectTitle">基礎科目(選択必修)</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "基礎科目(選択必修)"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_basic_sub2(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject11">
+                        <div class="subjectTitle">基礎科目(選択)</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "基礎科目(選択)"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_basic_sub3(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="subject12"> 
+                        <div class="subjectTitle">演習科目</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "演習科目"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_seminar_sub(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>  
+                    <div class="subject13"> 
+                        <div class="subjectTitle">情報科目</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "情報科目"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_info_sub(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>  
+                    <div class="subject14"> 
+                        <div class="subjectTitle">キャリア科目</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "キャリア科目"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_career_sub(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>  
+                    <div class="subject15"> 
+                        <div class="subjectTitle">経済の基礎理論</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "経済の基礎理論"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_eco_foundation(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>  
+                    <div class="subject16"> 
+                        <div class="subjectTitle">経済の歴史</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "経済の歴史"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_eco_history(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>  
+                    <div class="subject17"> 
+                        <div class="subjectTitle">現代社会の経済</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "現代社会の経済"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_eco_of_modern(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>  
+                    <div class="subject18"> 
+                        <div class="subjectTitle">国際経済</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "国際経済"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_international_eco(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>  
+                    <div class="subject19"> 
+                        <div class="subjectTitle">地域研究</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "地域研究"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_area_studies(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>    
+                    <div class="subject20"> 
+                        <div class="subjectTitle">自由科目</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "自由科目"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_free_sub(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>  
+                    <div class="subject21"> 
+                        <div class="subjectTitle">教職課程</div>
+                        <div class="subject-button">
+                            <% subjects.forEach((sub) => { %>
+                                <% if(sub.class === "教職"){ %>
+                                    <input type="button" value="<%= sub.name %>" onclick="addToList(this.value); addQt_teacher_training(<%=sub.qt%>);">
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper2">
+                    <div id="liOfAcquiredSub" class="Acquisition subject">
+                        <h2>履修科目一覧</h2>
+
+                    </div>
+                    <div>
+                        <input type="button" value="計算" onclick="botan();">                     
+                </div>
+                
+                <div class="wrapper3">
+                    <div class="total">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th rowspan="21" class="headline">修得単位集計表</th>
+                                    <th class="Sub-class">科目区分</th>
+                                    <th>修得科目数</th>
+                                    <th>修得単位数</th>
+                                    <th>卒業単位数</th>
+                                    <th>不足単位数</th>
+                                    <th class="Sub-class">科目区分</th>
+                                    <th>修得科目数</th>
+                                    <th>修得単位数</th>
+                                    <th>卒業単位数</th>
+                                    <th>不足単位数</th>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">■教養教育科目</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">■専門科目</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">A系列(1~3群)</th>
+                                    <td id="noct-edua"></td>
+                                    <td id="ac-edua" ></td>
+                                    <td>6</td>
+                                    <td id="mc-edua" class="shortage"></td>
+                                    <th class="Sub-class">基礎科目(必修)[A1]</th>
+                                    <td id="noct-basic-sub1"></td>
+                                    <td id="ac-basic-sub1"></td>
+                                    <td>6</td>
+                                    <td id="mc-basic-sub1" class="shortage"></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">B系列(4~6群)</th>
+                                    <td id="noct-edub"></td>
+                                    <td id="ac-edub"></td>
+                                    <td>2</td>
+                                    <td id="mc-edub" class="shortage"></td>
+                                    <th class="Sub-class">基礎科目（選択必修）[A2] </th>
+                                    <td id="noct-basic-sub2"></td>
+                                    <td id="ac-basic-sub2"></td>
+                                    <td>2</td>
+                                    <td id="mc-basic-sub2" class="shortage"></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">C系列(7~9群)</th>
+                                    <td id="noct-educ"></td>
+                                    <td id="ac-educ"></td>
+                                    <td>4</td>
+                                    <td id="mc-educ" class="shortage"></td>
+                                    <th class="Sub-class">基礎科目（選択）[A3]</th>
+                                    <td id="noct-basic-sub3"></td>
+                                    <td id="ac-basic-sub3"></td>
+                                    <td></td>
+                                    <td id="mc--basic-sub3" class="shortage"></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">D系列(10群)</th>
+                                    <td id="noct-edud"></td>
+                                    <td id="ac-edud"></td>
+                                    <td>2</td>
+                                    <td id="mc-edud" class="shortage"></td>
+                                    <th class="Sub-class">基礎科目[A2・A3]小計</th>
+                                    <td id="noct-basic-sub-total"></td>
+                                    <td id="ac-basic-sub-total"></td>
+                                    <td>10</td>
+                                    <td id="mc-basic-sub-total" class="shortage"></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">E系列</th>
+                                    <td id="noct-edue"></td>
+                                    <td id="ac-edue"></td>
+                                    <td></td>
+                                    <td id="mc-edue" class="shortage"></td>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">教養教育科目　小計</th>
+                                    <td id="noct-eduTotal"></td>
+                                    <td id="ac-eduTotal"></td>
+                                    <td>16</td>
+                                    <td id="mc-eduTotal" class="shortage"></td>
+                                    <th class="Sub-class">演習科目　[B1] </th>
+                                    <td id="noct-seminar-sub"></td>
+                                    <td id="ac-seminar-sub"></td>
+                                    <td>8</td>
+                                    <td id="mc-seminar-sub" class="shortage"></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">情報科目　[B2] </th>
+                                    <td id="noct-info-sub"></td>
+                                    <td id="ac-info-sub"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">ｷｬﾘｱ科目(上限4単位) [B3] </th>
+                                    <td id="noct-career-sub"></td>
+                                    <td id="ac-career-sub"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">■外国語科目</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">経済の基礎理論　[S1] </th>
+                                    <td id="noct-eco-foundation"></td>
+                                    <td id="ac-eco-foundation"></td>
+                                    <td>12</td>
+                                    <td id="mc-eco-foundation" class="shortage"></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">第一外国語（英語）</th>
+                                    <td id="noct-flang1"></td>
+                                    <td id="ac-flang1"></td>
+                                    <td>8</td>
+                                    <td id="mc-flang1" class="shortage"></td>
+                                    <th class="Sub-class">経済の歴史　[S2]</th>
+                                    <td id="noct-eco-history"></td>
+                                    <td id="ac-eco-history"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">第二外国語</th>
+                                    <td id="noct-flang2"></td>
+                                    <td id="ac-flang2"></td>
+                                    <td>8</td>
+                                    <td id="mc-flang2" class="shortage"></td>
+                                    <th class="Sub-class">現代社会の経済　[S3] </th>
+                                    <td id="noct-eco-of-modern"></td>
+                                    <td id="ac-eco-of-modern"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">国際経済　[S4]</th>
+                                    <td id="noct-international-eco"></td>
+                                    <td id="ac-international-eco"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class">選択外国語</th>
+                                    <td id="noct-any-flang"></td>
+                                    <td id="ac-any-flang"></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">地域研究　[S5]</th>
+                                    <td id="noct-area-studies"></td>
+                                    <td id="ac-area-studies"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">[B1～B3][S1～S5]  小計 </th>
+                                    <td id="noct-specialty-total"></td>
+                                    <td id="ac-specialty-total"></td>
+                                    <td>68</td>
+                                    <td id="mc-specialty-total" class="shortage"></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">■自由科目　[ZF] </th>
+                                    <td id="noct-free-sub"></td>
+                                    <td id="ac-free-sub"></td>
+                                    <td>10</td>
+                                    <td id="mc-free-sub" class="shortage"></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">合　計 </th>
+                                    <td id="noct-total"></td>
+                                    <td id="ac-total"></td>
+                                    <td>126</td>
+                                    <td id="mc-total" class="shortage"></td>
+                                </tr>
+                                <tr>
+                                    <th class="Sub-class"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th class="Sub-class">（卒業要件外の科目）</th>
+                                    <td id="noct-teacher-training"></td>
+                                    <td id="ac-teacher-training"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+        <script>
+            let NOCT_eduA = 0;
+            let AC_eduA=0;
+            const addQt_eduA=(qt)=>{
+                NOCT_eduA = NOCT_eduA+1;
+                AC_eduA = AC_eduA+qt;
+            }
+            let NOCT_eduB = 0;
+            let AC_eduB =0;
+            const addQt_eduB=(qt)=>{
+                NOCT_eduB = NOCT_eduB+1;
+                AC_eduB = AC_eduB+qt;
+            }
+            let NOCT_eduC = 0;
+            let AC_eduC =0;
+            const addQt_eduC=(qt)=>{
+                NOCT_eduC = NOCT_eduC+1;
+                AC_eduC = AC_eduC+qt;
+            }
+            let NOCT_eduD = 0;
+            let AC_eduD =0;
+            const addQt_eduD=(qt)=>{
+                NOCT_eduD = NOCT_eduD+1;
+                AC_eduD = AC_eduD+qt;
+            }
+            let NOCT_eduE = 0;
+            let AC_eduE =0;
+            const addQt_eduE=(qt)=>{
+                NOCT_eduE = NOCT_eduE+1;
+                AC_eduE = AC_eduE+qt;
+            }
+            let NOCT_flang1 = 0;
+            let AC_flang1 = 0;
+            const addQt_flang1=(qt)=>{
+                NOCT_flang1 = NOCT_flang1+1;
+                AC_flang1 = AC_flang1+qt;
+            }
+            let NOCT_flang2 = 0;
+            let AC_flang2 = 0;
+            const addQt_flang2=(qt)=>{
+                NOCT_flang2 = NOCT_flang2+1;
+                AC_flang2 = AC_flang2+qt;
+            }
+            let NOCT_any_flang = 0;
+            let AC_any_flang = 0;
+            const addQt_any_flang=(qt)=>{
+                NOCT_any_flang = NOCT_any_flang+1;
+                AC_any_flang = AC_any_flang+qt;
+            }
+            let NOCT_basic_sub1 = 0;
+            let AC_basic_sub1 = 0;
+            const addQt_basic_sub1=(qt)=>{
+                NOCT_basic_sub1 = NOCT_basic_sub1+1;
+                AC_basic_sub1 = AC_basic_sub1+qt;
+            }
+            let NOCT_basic_sub2 = 0;
+            let AC_basic_sub2 = 0;
+            const addQt_basic_sub2=(qt)=>{
+                NOCT_basic_sub2 = NOCT_basic_sub2+1;
+                AC_basic_sub2 = AC_basic_sub2+qt;
+            }
+            let NOCT_basic_sub3 = 0;
+            let AC_basic_sub3 = 0;
+            const addQt_basic_sub3=(qt)=>{
+                NOCT_basic_sub3 = NOCT_basic_sub3+1;
+                AC_basic_sub3 = AC_basic_sub3+qt;
+            }
+            let NOCT_seminar_sub = 0;
+            let AC_seminar_sub = 0;
+            const addQt_seminar_sub=(qt)=>{
+                NOCT_seminar_sub = NOCT_seminar_sub+1;
+                AC_seminar_sub = AC_seminar_sub+qt;
+            }
+            let NOCT_info_sub = 0;
+            let AC_info_sub = 0;
+            const addQt_info_sub=(qt)=>{
+                NOCT_info_sub = NOCT_info_sub+1;
+                AC_info_sub = AC_info_sub+qt;
+            }
+            let NOCT_career_sub = 0;
+            let AC_career_sub = 0;
+            const addQt_career_sub=(qt)=>{
+                NOCT_career_sub = NOCT_career_sub+1;
+                AC_career_sub = AC_career_sub+qt;
+            }
+            let NOCT_eco_foundation = 0;
+            let AC_eco_foundation = 0;
+            const addQt_eco_foundation=(qt)=>{
+                NOCT_eco_foundation = NOCT_eco_foundation+1;
+                AC_eco_foundation = AC_eco_foundation+qt;
+            }
+            let NOCT_eco_history = 0;
+            let AC_eco_history = 0;
+            const addQt_eco_history=(qt)=>{
+                NOCT_eco_history = NOCT_eco_history+1;
+                AC_eco_history = AC_eco_history+qt;
+            }
+            let NOCT_eco_of_modern = 0;
+            let AC_eco_of_modern = 0;
+            const addQt_eco_of_modern=(qt)=>{
+                NOCT_eco_of_modern = NOCT_eco_of_modern+1;
+                AC_eco_of_modern = AC_eco_of_modern+qt;
+            }
+            let NOCT_international_eco = 0;
+            let AC_international_eco = 0;
+            const addQt_international_eco=(qt)=>{
+                NOCT_international_eco = NOCT_international_eco+1;
+                AC_international_eco = AC_international_eco+qt;
+            }
+            let NOCT_area_studies = 0;
+            let AC_area_studies = 0;
+            const addQt_area_studies=(qt)=>{
+                NOCT_area_studies = NOCT_area_studies+1;
+                AC_area_studies = AC_area_studies+qt;
+            }
+            let NOCT_free_sub = 0;
+            let AC_free_sub = 0;
+            const addQt_free_sub=(qt)=>{
+                NOCT_free_sub = NOCT_free_sub+1;
+                AC_free_sub = AC_free_sub+qt;
+            }
+            let NOCT_teacher_training = 0;
+            let AC_teacher_training = 0;
+            const addQt_teacher_training=(qt)=>{
+                NOCT_teacher_training = NOCT_teacher_training+1;
+                AC_teacher_training = AC_teacher_training+qt;
+            }
+            const botan=()=>{
+                document.getElementById("noct-edua").textContent= NOCT_eduA;
+                document.getElementById("ac-edua").textContent= AC_eduA;
+                if(6-AC_eduA > 0){
+                    document.getElementById("mc-edua").textContent= 6-AC_eduA;}else{
+                        document.getElementById("mc-edua").textContent="";
+                    }
+                document.getElementById("noct-edub").textContent= NOCT_eduB;
+                document.getElementById("ac-edub").textContent= AC_eduB;
+                if(2-AC_eduB > 0){
+                    document.getElementById("mc-edub").textContent= 2-AC_eduB;}else{
+                        document.getElementById("mc-edub").textContent="";
+                    }
+                document.getElementById("noct-educ").textContent= NOCT_eduC;
+                document.getElementById("ac-educ").textContent= AC_eduC;
+                if(4-AC_eduB > 0){
+                    document.getElementById("mc-educ").textContent= 4-AC_eduC;}else{
+                        document.getElementById("mc-educ").textContent="";
+                    }
+                document.getElementById("noct-edud").textContent= NOCT_eduD;
+                document.getElementById("ac-edud").textContent= AC_eduD;
+                if(2-AC_eduB > 0){
+                    document.getElementById("mc-edud").textContent= 2-AC_eduD;}else{
+                        document.getElementById("mc-edud").textContent="";
+                    }
+                document.getElementById("noct-edue").textContent= NOCT_eduE;
+                document.getElementById("ac-edue").textContent= AC_eduE;
+                document.getElementById("noct-eduTotal").textContent= NOCT_eduA + NOCT_eduB + NOCT_eduC + NOCT_eduD + NOCT_eduE;
+                document.getElementById("ac-eduTotal").textContent= AC_eduA + AC_eduB + AC_eduC + AC_eduD + AC_eduE ;
+                if(16-(AC_eduA + AC_eduB + AC_eduC + AC_eduD + AC_eduE) > 0){
+                    document.getElementById("mc-eduTotal").textContent= 16-(AC_eduA + AC_eduB + AC_eduC + AC_eduD + AC_eduE );}else{
+                        document.getElementById("mc-eduTotal").textContent="";
+                    }
+                document.getElementById("noct-flang1").textContent= NOCT_flang1;
+                document.getElementById("ac-flang1").textContent= AC_flang1 ;
+                if(8-AC_flang1 > 0){
+                    document.getElementById("mc-flang1").textContent= 8-AC_flang1;}else{
+                        document.getElementById("mc-flang1").textContent="";
+                    }
+                document.getElementById("noct-flang2").textContent= NOCT_flang2;
+                document.getElementById("ac-flang2").textContent= AC_flang2 ;
+                if(8-AC_flang2 > 0){
+                    document.getElementById("mc-flang2").textContent= 8-AC_flang2;}else{
+                        document.getElementById("mc-flang2").textContent="";
+                    }
+                document.getElementById("noct-any-flang").textContent= NOCT_any_flang;
+                document.getElementById("ac-any-flang").textContent= AC_any_flang ;
+                document.getElementById("noct-basic-sub1").textContent= NOCT_basic_sub1;
+                document.getElementById("ac-basic-sub1").textContent= AC_basic_sub1 ;
+                if(6-AC_basic_sub1 > 0){
+                    document.getElementById("mc-basic-sub1").textContent= 6-AC_basic_sub1;}else{
+                        document.getElementById("mc-basic-sub1").textContent="";
+                    }
+                document.getElementById("noct-basic-sub2").textContent= NOCT_basic_sub2;
+                document.getElementById("ac-basic-sub2").textContent= AC_basic_sub2 ;
+                if(2-AC_basic_sub2 > 0){
+                    document.getElementById("mc-basic-sub2").textContent= 2-AC_basic_sub2;}else{
+                        document.getElementById("mc-basic-sub2").textContent="";
+                    }
+                document.getElementById("noct-basic-sub3").textContent= NOCT_basic_sub3;
+                document.getElementById("ac-basic-sub3").textContent= AC_basic_sub3 ;
+                document.getElementById("noct-basic-sub-total").textContent= NOCT_basic_sub2 + NOCT_basic_sub3;
+                document.getElementById("ac-basic-sub-total").textContent=AC_basic_sub2 + AC_basic_sub3 ;
+                if(10-( AC_basic_sub2 + AC_basic_sub3) > 0){
+                    document.getElementById("mc-basic-sub-total").textContent= 10-(AC_basic_sub2 + AC_basic_sub3);}else{
+                        document.getElementById("mc-basic-sub-total").textContent="";
+                    }
+                document.getElementById("noct-seminar-sub").textContent= NOCT_seminar_sub;
+                document.getElementById("ac-seminar-sub").textContent= AC_seminar_sub ;
+                if(8-AC_seminar_sub > 0){
+                    document.getElementById("mc-seminar-sub").textContent= 8-AC_seminar_sub;}else{
+                        document.getElementById("mc-seminar-sub").textContent="";
+                    }
+                document.getElementById("noct-info-sub").textContent= NOCT_info_sub;
+                document.getElementById("ac-info-sub").textContent= AC_info_sub ;
+                document.getElementById("noct-career-sub").textContent= NOCT_career_sub;
+                document.getElementById("ac-career-sub").textContent= AC_career_sub ;
+                document.getElementById("noct-eco-foundation").textContent= NOCT_eco_foundation;
+                document.getElementById("ac-eco-foundation").textContent= AC_eco_foundation;
+                if(12-AC_eco_foundation > 0){
+                    document.getElementById("mc-eco-foundation").textContent= 12-AC_eco_foundation;}else{
+                        document.getElementById("mc-eco-foundation").textContent="";
+                    }
+                document.getElementById("noct-eco-history").textContent= NOCT_eco_history;
+                document.getElementById("ac-eco-history").textContent= AC_eco_history ;
+                document.getElementById("noct-eco-of-modern").textContent= NOCT_eco_of_modern;
+                document.getElementById("ac-eco-of-modern").textContent= AC_eco_of_modern;
+                document.getElementById("noct-international-eco").textContent= NOCT_international_eco;
+                document.getElementById("ac-international-eco").textContent= AC_international_eco ;
+                document.getElementById("noct-area-studies").textContent= NOCT_area_studies;
+                document.getElementById("ac-area-studies").textContent= AC_area_studies ;
+                document.getElementById("noct-specialty-total").textContent= NOCT_seminar_sub+NOCT_info_sub+NOCT_career_sub
+                +NOCT_eco_foundation+NOCT_eco_history+NOCT_eco_of_modern+NOCT_international_eco+NOCT_area_studies;
+                document.getElementById("ac-specialty-total").textContent= AC_seminar_sub+AC_info_sub+AC_career_sub
+                +AC_eco_foundation+AC_eco_history+AC_eco_of_modern+AC_international_eco+AC_area_studies ;
+                if(68-(AC_seminar_sub+AC_info_sub+AC_career_sub+AC_eco_foundation+AC_eco_history+AC_eco_of_modern+AC_international_eco+AC_area_studies) > 0){
+                    document.getElementById("mc-specialty-total").textContent= 68-(AC_seminar_sub+AC_info_sub+AC_career_sub+AC_eco_foundation+AC_eco_history+AC_eco_of_modern+AC_international_eco+AC_area_studies);}else{
+                        document.getElementById("mc-specialty-total").textContent="";
+                    }
+                document.getElementById("noct-free-sub").textContent= NOCT_free_sub;
+                document.getElementById("ac-free-sub").textContent= AC_free_sub;
+                if(10-AC_eduA > 0){
+                    document.getElementById("mc-free-sub").textContent= 10-AC_free_sub;}else{
+                        document.getElementById("mc-free-sub").textContent="";
+                    }
+                document.getElementById("noct-total").textContent=NOCT_eduA+NOCT_eduB+NOCT_eduC+NOCT_eduD+NOCT_eduE+NOCT_flang1
+                +NOCT_flang2+NOCT_any_flang+NOCT_basic_sub1+NOCT_basic_sub2+NOCT_basic_sub3+NOCT_seminar_sub+NOCT_info_sub+NOCT_career_sub
+                +NOCT_eco_foundation+NOCT_eco_history+NOCT_eco_of_modern+NOCT_international_eco+NOCT_area_studies+NOCT_free_sub;
+                document.getElementById("ac-total").textContent=AC_eduA+NOCT_eduB+AC_eduC+AC_eduD+AC_eduE+AC_flang1
+                +AC_flang2+AC_any_flang+AC_basic_sub1+AC_basic_sub2+AC_basic_sub3+AC_seminar_sub+AC_info_sub+AC_career_sub
+                +AC_eco_foundation+AC_eco_history+AC_eco_of_modern+AC_international_eco+AC_area_studies+AC_free_sub;
+                if(126-(AC_eduA+NOCT_eduB+AC_eduC+AC_eduD+AC_eduE+AC_flang1+AC_flang2+AC_any_flang+AC_basic_sub1+AC_basic_sub2
+                +AC_basic_sub3+AC_seminar_sub+AC_info_sub+AC_career_sub+AC_eco_foundation+AC_eco_history+AC_eco_of_modern
+                +AC_international_eco+AC_area_studies+AC_free_sub)> 0){
+                    document.getElementById("mc-total").textContent= 126-(AC_eduA+NOCT_eduB+AC_eduC+AC_eduD+AC_eduE+AC_flang1
+                    +AC_flang2+AC_any_flang+AC_basic_sub1+AC_basic_sub2+AC_basic_sub3+AC_seminar_sub+AC_info_sub+AC_career_sub
+                    +AC_eco_foundation+AC_eco_history+AC_eco_of_modern+AC_international_eco+AC_area_studies+AC_free_sub);}else{
+                        document.getElementById("mc-total").textContent="";
+                    }
+                document.getElementById("noct-teacher-training").textContent= NOCT_teacher_training;
+                document.getElementById("ac-teacher-training").textContent= AC_teacher_training;
+            }
+            const ul_element= document.createElement("ul");
+            const li_position = document.getElementById("liOfAcquiredSub");
+            const addToList = (value)=>{
+                const li_element = document.createElement('li');
+                li_element.textContent = value;
+                ul_element.appendChild(li_element);
+            }
+            li_position.appendChild(ul_element);
+        </script>
+    </body>
+</html>

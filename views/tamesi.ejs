@@ -1,0 +1,11 @@
+<% eduA.forEach((educationA) => { %>
+    <button type="button" id="eduA-<%=educationA.id%> class="name-column" onclick="getId(<%= educationA %>);"><%= educationA.name %> </button>
+<% }); %>
+<script>
+function getId(id_value){
+    console.log(id_value);
+}
+</script>
+
+
+<input type="button" id="id01" value="show ID" oncick="getId(this.id);">
